@@ -11,10 +11,13 @@ function love.load()
     gridXCount = 20
     gridYCount = 20
     cellSize = 25
-    foodPosition = {
-        x = love.math.random(1, gridXCount),
-        y = love.math.random(1, gridYCount),
-    }
+    function moveFood()
+        foodPosition = {
+            x = love.math.random(1, gridXCount),
+            y = love.math.random(1, gridYCount),
+        }
+    end
+    moveFood()
 end
 
 function love.update(dt)
@@ -54,10 +57,7 @@ function love.update(dt)
 
         table.insert( snakeSegments, 1, { x = nextXPosition, y = nextYPosition } )
         if snakeSegments[1].x == foodPosition.x and snakeSegments[1].y == foodPosition.y then
-            foodPosition = {
-                x = love.math.random(1, gridXCount),
-                y = love.math.random(1, gridYCount),
-            }
+            moveFood()
         else
             table.remove( snakeSegments )
         end
