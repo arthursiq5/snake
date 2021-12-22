@@ -10,9 +10,15 @@ end
 
 function love.update(dt)
     timer = timer + dt
+
     if timer >= 0.15 then
         timer = 0
-        print('tick')
+        
+        local nextXPosition = snakeSegments[1].x +1
+        local nextYPosition = snakeSegments[1].y
+
+        table.insert( snakeSegments, 1, { x = nextXPosition, y = nextYPosition } )
+        table.remove( snakeSegments )
     end
 end
 
