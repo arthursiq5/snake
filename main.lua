@@ -1,4 +1,5 @@
 function love.load()
+    love.window.setTitle( 'snake' )
     love.window.setMode( 500, 500 )
     direction = 'right'
     gridXCount = 20
