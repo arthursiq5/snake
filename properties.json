@@ -1,0 +1,11 @@
+{
+    "projectName": "LoveSnake",
+    "author": "arthursiq5",
+    "projectVersion": "1.0.0",
+    "license": "MIT",
+    "year": "2021",
+    "version": {
+        "lua": "5.3.1",
+        "LOVE": "11.3 (Mysterious Mysteries)"
+    }
+}
