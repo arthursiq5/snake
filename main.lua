@@ -1,5 +1,10 @@
 function love.load()
     love.window.setMode( 500, 500 )
+    snakeSegments = {
+        { x = 3, y = 1 },
+        { x = 2, y = 1 },
+        { x = 1, y = 1 },
+    }
     timer = 0
 end
 
@@ -24,12 +29,6 @@ function love.draw()
         gridXCount * cellSize,
         gridYCount * cellSize
     )
-
-    local snakeSegments = {
-        { x = 3, y = 1 },
-        { x = 2, y = 1 },
-        { x = 1, y = 1 },
-    }
 
     for index, segment in ipairs(snakeSegments) do
         love.graphics.setColor( .6, 1, .32 )
