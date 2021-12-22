@@ -11,6 +11,10 @@ function love.load()
     gridXCount = 20
     gridYCount = 20
     cellSize = 25
+    foodPosition = {
+        x = love.math.random(1, gridXCount),
+        y = love.math.random(1, gridYCount),
+    }
 end
 
 function love.update(dt)
@@ -73,6 +77,15 @@ function love.draw()
             cellSize - 1
         )
     end
+
+    love.graphics.setColor(1, .3, .3)
+    love.graphics.rectangle(
+        'fill',
+        (foodPosition.x - 1) * cellSize,
+        (foodPosition.y - 1) * cellSize,
+        cellSize - 1,
+        cellSize - 1
+    )
 end
 
 function love.keypressed(key)
