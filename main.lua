@@ -1,8 +1,14 @@
 function love.load()
     love.window.setMode( 500, 500 )
+    timer = 0
 end
 
 function love.update(dt)
+    timer = timer + dt
+    if timer >= 0.15 then
+        timer = 0
+        print('tick')
+    end
 end
 
 function love.draw()
